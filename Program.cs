@@ -31,6 +31,11 @@ namespace BinarySearchTree
             
             Console.WriteLine("\n--------------------------------------");
             binarySearch.SizeOfTree();
+            //Search and Display Node DATA 63
+            Console.WriteLine("------------------------");
+            Console.WriteLine("Search Status ::");
+
+            binarySearch.SearchTree(binarySearch.root, 63);
         }
     }
 }
