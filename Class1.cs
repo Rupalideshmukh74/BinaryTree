@@ -6,6 +6,7 @@ namespace BinarySearchTree
 {
     class BinarySearchTree<T> where T : IComparable
     {
+        int treeSize = 0;
         public Node<T> root;
         public BinarySearchTree()
         {
@@ -19,6 +20,8 @@ namespace BinarySearchTree
             if (root == null)
             {
                 root = newNode;
+                //Console.WriteLine(" Root ");
+                treeSize++;
             }
             else
             {
@@ -34,7 +37,9 @@ namespace BinarySearchTree
                         if (newRoot == null)
                         {
                             parent.LeftTree = newNode;
+                            treeSize++;
                             return;
+
                         }
                     }
                     else
@@ -44,21 +49,22 @@ namespace BinarySearchTree
                         if (newRoot == null)
                         {
                             parent.RightTree = newNode;
+                            treeSize++;
                             return;
                         }
                     }
                 }
             }
         }
-
-        public void Traverse(Node<T> Root)
-        {
-            if (Root != null)
+            public void SizeOfTree()
             {
-                Traverse(Root.LeftTree);
-                Console.Write(Root.NodeData + " ");
-                Traverse(Root.RightTree);
+                if (root == null)
+                {
+                    Console.WriteLine("Binary Search Tree is Empty");
+                }
+                Console.WriteLine("\nSize of tree is : " + treeSize);
             }
         }
+
+   
     }
-}
